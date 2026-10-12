@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e1b4b, #4338ca);
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.container {
+    width: 320px;
+    padding: 32px 28px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#otp-title {
+    margin: 0 0 24px;
+    font-size: 1.5rem;
+    color: #1e1b4b;
+}
+
+#otp-display {
+    margin: 0 0 12px;
+    padding: 18px 12px;
+    background: #eef2ff;
+    border: 2px dashed #a5b4fc;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3730a3;
+    letter-spacing: 2px;
+}
+
+#otp-timer {
+    min-height: 1.5em;
+    margin: 0 0 24px;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+#generate-otp-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #4f46e5;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+#generate-otp-button:hover:not(:disabled) {
+    background: #4338ca;
+}
+
+#generate-otp-button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+#generate-otp-button:disabled {
+    background: #c7d2fe;
+    color: #818cf8;
+    cursor: not-allowed;
+}
