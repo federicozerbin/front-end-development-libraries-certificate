@@ -1,0 +1,37 @@
+.squaresBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 6px;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+.square {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.square:hover {
+    background: #eaf0f7;
+}
+
+.gameContainer {
+    text-align: center;
+    font-family: system-ui, sans-serif;
+}
+
+#reset {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: #1e3a5f;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
