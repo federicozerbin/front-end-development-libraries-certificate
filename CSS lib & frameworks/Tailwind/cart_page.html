@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Shopping Cart Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 font-sans text-slate-100">
+
+    <main class="mx-auto max-w-6xl px-4 py-10">
+        <h1 class="mb-10 text-3xl font-bold tracking-tight md:text-5xl">Your cart</h1>
+
+        <div id="shopping-cart-container" class="flex flex-col gap-8 lg:flex-row lg:items-start">
+
+            <div id="products-container" class="flex flex-1 flex-col gap-4">
+
+                <div class="card flex flex-wrap items-center gap-4 rounded-xl border border-slate-800 bg-slate-900 p-4">
+                    <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-3xl"
+                        aria-hidden="true">🎧</div>
+                    <div class="min-w-[10rem] flex-1">
+                        <h2 class="text-xl font-semibold">Pro Studio Headphones</h2>
+                        <p class="text-sm text-slate-400">Over-ear, closed design</p>
+                    </div>
+                    <div class="quantity flex items-center gap-3 rounded-full bg-slate-800 px-4 py-1">
+                        <span aria-hidden="true" class="cursor-pointer text-slate-400">&lt;</span>
+                        <p>1</p>
+                        <span aria-hidden="true" class="cursor-pointer text-slate-400">&gt;</span>
+                    </div>
+                    <p class="price w-24 text-right text-lg font-semibold">$129.00</p>
+                    <button
+                        class="remove-button rounded-lg bg-red-500 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-red-600">Remove</button>
+                </div>
+
+                <div class="card flex flex-wrap items-center gap-4 rounded-xl border border-slate-800 bg-slate-900 p-4">
+                    <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-3xl"
+                        aria-hidden="true">💿</div>
+                    <div class="min-w-[10rem] flex-1">
+                        <h2 class="text-xl font-semibold">Midnight Sessions Vinile disc</h2>
+                        <p class="text-sm text-slate-400">LP 180 g, limited edition</p>
+                    </div>
+                    <div class="quantity flex items-center gap-3 rounded-full bg-slate-800 px-4 py-1">
+                        <span aria-hidden="true" class="cursor-pointer text-slate-400">&lt;</span>
+                        <p>1</p>
+                        <span aria-hidden="true" class="cursor-pointer text-slate-400">&gt;</span>
+                    </div>
+                    <p class="price w-24 text-right text-lg font-semibold">$29.99</p>
+                    <button
+                        class="remove-button rounded-lg bg-red-500 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-red-600">Remove</button>
+                </div>
+
+                <div class="card flex flex-wrap items-center gap-4 rounded-xl border border-slate-800 bg-slate-900 p-4">
+                    <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-3xl"
+                        aria-hidden="true">🎸</div>
+                    <div class="min-w-[10rem] flex-1">
+                        <h2 class="text-xl font-semibold">Folk Acustic Guitar</h2>
+                        <p class="text-sm text-slate-400">Top category Pine wood</p>
+                    </div>
+                    <div class="quantity flex items-center gap-3 rounded-full bg-slate-800 px-4 py-1">
+                        <span aria-hidden="true" class="cursor-pointer text-slate-400">&lt;</span>
+                        <p>1</p>
+                        <span aria-hidden="true" class="cursor-pointer text-slate-400">&gt;</span>
+                    </div>
+                    <p class="price w-24 text-right text-lg font-semibold">$249.00</p>
+                    <button
+                        class="remove-button rounded-lg bg-red-500 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-red-600">Remove</button>
+                </div>
+
+                <div class="card flex flex-wrap items-center gap-4 rounded-xl border border-slate-800 bg-slate-900 p-4">
+                    <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-slate-800 text-3xl"
+                        aria-hidden="true">📻</div>
+                    <div class="min-w-[10rem] flex-1">
+                        <h2 class="text-xl font-semibold">Retro Vinile disc player</h2>
+                        <p class="text-sm text-slate-400">Belt wired traction, Bluetooth</p>
+                    </div>
+                    <div class="quantity flex items-center gap-3 rounded-full bg-slate-800 px-4 py-1">
+                        <span aria-hidden="true" class="cursor-pointer text-slate-400">&lt;</span>
+                        <p>1</p>
+                        <span aria-hidden="true" class="cursor-pointer text-slate-400">&gt;</span>
+                    </div>
+                    <p class="price w-24 text-right text-lg font-semibold">$179.00</p>
+                    <button
+                        class="remove-button rounded-lg bg-red-500 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-red-600">Remove</button>
+                </div>
+
+            </div>
+
+            <div id="order-summary-container"
+                class="w-full rounded-2xl border-2 border-slate-700 bg-slate-900 p-6 lg:sticky lg:top-8 lg:w-96">
+                <h2 class="mb-6 text-2xl font-bold">Order Summary</h2>
+                <div class="flex items-center justify-between border-t border-slate-700 pt-4">
+                    <p id="total" class="text-lg font-semibold">Total:</p>
+                    <p id="total-amount" class="text-2xl font-bold">$586.99</p>
+                </div>
+                <a href="#"
+                    class="mt-6 block rounded-lg bg-blue-600 px-4 py-3 text-center font-semibold text-white transition-colors hover:bg-blue-700">Checkout</a>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>
