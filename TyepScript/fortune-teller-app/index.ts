@@ -125,7 +125,6 @@ class Game {
         this.elements.newReadingBtn.addEventListener("click", () =>
             this.newReading(),
         );
-
         document.addEventListener("click", (e: Event) => this.showFortune(e));
     }
 
@@ -138,6 +137,69 @@ class Game {
             this.elements.headerTitle,
         );
 
-        const isReversed = 
-  }
+        const isReversed = Math.random() < 0.5;
+        const chosenCard = getRandomItem(this.cards);
+        this.elements.singleCard.innerHTML = renderCard(
+            "Click the card and reveal the fortune",
+            isReversed,
+            chosenCard.name_short,
+            chosenCard.img,
+        );
+        this.elements.multipleCard.innerHTML = "";
+        showElements(this.elements.singleCard, this.elements.fortuneContainer);
+    }
+
+    multipleCardSelected() {
+        hideElements(
+            this.elements.singleCard,
+            this.elements.singleCardBtn,
+            this.elements.multipleCardsBtn,
+            this.elements.headerTitle,
+        );
+
+        showElements(
+            this.elements.multipleCard,
+            this.elements.fortuneContainer,
+            this.elements.text,
+        );
+
+        this.elements.multipleCard.innerHTML = Object.values(DrawingType)
+            .map((type) => {
+                const isReversed = Math.random() < 0.5;
+                const card = getRandomItem(this.cards);
+                return renderCard(type, isReversed, card.name_short, card.img);
+            })
+            .join("");
+    }
+
+    showFortune(e: Event) {
+        const target = e.target
+        if (!(target instanceof HTMLElement)) {
+            return;
+        }
+
+        const cardElement = target?.closest(".card_container")
+        if (!(cardElement instanceof HTMLElement)) {
+            return;
+        }
+
+        if (!cardElement) {
+            return;
+        }
+
+        const cardId = cardElement.getAttribute("data-id");
+        const foundCard = this.cards.find((card) => card.name_short === cardId);
+
+        if (foundCard) {
+            this.elements.cardTitle.textContent = foundCard.name;
+            this.elements.description.textContent = foundCard.desc;
+
+        }
+    }
+
+    newReading() {
+
+    }
 }
+
+const game = new Game();
