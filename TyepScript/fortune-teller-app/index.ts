@@ -125,6 +125,7 @@ class Game {
         this.elements.newReadingBtn.addEventListener("click", () =>
             this.newReading(),
         );
+
         document.addEventListener("click", (e: Event) => this.showFortune(e));
     }
 
@@ -193,12 +194,15 @@ class Game {
         if (foundCard) {
             this.elements.cardTitle.textContent = foundCard.name;
             this.elements.description.textContent = foundCard.desc;
-
+            this.elements.subTitle.textContent = foundCard.meaning_up;
+            this.elements.title.textContent = foundCard.name;
+            showElements(this.elements.fortuneDescription);
         }
     }
 
     newReading() {
-
+        showElements(this.elements.singleCardBtn, this.elements.multipleCardsBtn, this.elements.headerTitle);
+        hideElements(this.elements.singleCard, this.elements.multipleCard, this.elements.fortuneContainer, this.elements.fortuneDescription);
     }
 }
 
