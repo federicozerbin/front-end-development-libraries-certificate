@@ -21,6 +21,7 @@ const moodEmojis: Record<PetMood, string> = {
     [PetMood.HUNGRY]: '🍔',
 };
 
+
 export const PetGame = () => {
 
     const [petName, setPetName] = useState('');
@@ -34,10 +35,10 @@ export const PetGame = () => {
         const timer = setInterval(() => {
             setPetProperties((p) => ({
                 ...p,
-                Hunger: Math.min(100, p.Hunger + 1),
-                Happiness: Math.max(0, p.Happiness - 1),
+                Hunger: Math.min(100, p.Hunger + 20),
+                Happiness: Math.max(0, p.Happiness - 20),
             }));
-        }, 200);
+        }, 10000);
         return () => clearInterval(timer);
     }, [submitted]);
 
