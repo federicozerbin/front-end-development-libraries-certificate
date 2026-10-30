@@ -2,13 +2,13 @@ const { useState, useEffect } = React;
 import type { FormEvent } from "react";
 
 enum PetMood {
-    HAPPY = 'Happy',
-    EXCITED = 'Excited',
-    CONTENT = 'Content',
-    SAD = 'Sad',
-    TIRED = 'Tired',
-    SICK = 'Sick',
-    HUNGRY = 'Hungry',
+    HAPPY,
+    EXCITED,
+    CONTENT,
+    SAD,
+    TIRED,
+    SICK,
+    HUNGRY,
 }
 
 const moodEmojis: Record<PetMood, string> = {
